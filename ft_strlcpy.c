@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:33:24 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/12 22:23:03 by mbousouf         ###   ########.fr       */
+/*   Created: 2022/10/13 18:46:47 by mbousouf          #+#    #+#             */
+/*   Updated: 2022/10/13 20:17:08 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-// size_t ft_strlcat(char * dst , const char * src ,size_t dst_size)
-// {
-//     size_t ds = strlen(dst);
-//     size_t sc = strlen(src);
-    
-// }
-int main()
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    char dst[] = "abcdlk";
-    char src[] = "efcg";
-    size_t r = strlcat(dst,src,7);
-   printf("%s >>>> %s [%zu]",src,dst,r);
+	size_t	i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	i++;
+	return (strlen(src));
 }

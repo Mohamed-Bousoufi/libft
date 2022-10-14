@@ -6,17 +6,16 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:33:04 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/07 15:39:39 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:55:46 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isprint( int c)
+int	ft_isprint(int c)
 {
-    if( c >= 32 && c <= 127)
-    {
-        return 1;
-    }
-    else
-        return 0;
+	if (c >= 32 && c <= 127)
+	{
+		return (1);
+	}
+	else
+		return (0);
 }

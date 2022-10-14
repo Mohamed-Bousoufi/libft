@@ -6,33 +6,39 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 14:18:44 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/12 22:21:05 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:20:29 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
-int ft_strncmp(const char *s1 , const char * s2,size_t count)
+int    ft_strncmp(const char *s1, const char *s2, size_t count)
 {
-    int i,res;
-    res = i = 0;
-    while (count > 0)
+    unsigned char    * d;
+    unsigned char    * s;
+    size_t i ; 
+    int res;
+         d = (unsigned char *)s1;
+         s = (unsigned char *)s2;
+         i = 0;
+         res = 0;
+    while(i < count && i <strlen((const char *)d))
     {
-            res = s1[i] - s2[i];   
-            count--;
-            if(s1[i] == s2[i])
-            {
-              i++;
-            }
+      if(d[i] > s[i])
+      {
+        res = 1;
+      }
+      else if(d[i] < s[i]) 
+      {
+        
+        res = -1;
+      }
+      else
+      {
+        res =0;
+      }
+            
+            i++;
     }
-        return res;
-    
-}
-
-int main ()
-{
-    char *s ="aaa";
-    char *m ="aad";
-    int res = ft_strncmp(s,m,3);
-    printf("V : %d",res);
+    return (res);
 }

@@ -6,17 +6,16 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:07:32 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/07 15:07:32 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:50:05 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if(c >= 48 && c <= 57)
-    {
-        return 1;
-    }
-    else
-        return 0;
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	else
+		return (0);
 }

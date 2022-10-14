@@ -6,17 +6,16 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:19:11 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/07 15:28:43 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:48:40 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii( int c)
+int	ft_isascii(int c)
 {
-    if( c >= 0 && c <= 127)
-    {
-        return 1;
-    }
-    else
-        return 0;
-    
+	if (c >= 0 && c <= 127)
+	{
+		return (1);
+	}
+	else
+		return (0);
 }

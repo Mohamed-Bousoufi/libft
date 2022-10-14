@@ -6,23 +6,23 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:45:24 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/12 21:05:46 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/13 20:53:52 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char * ft_strdup (const char * s)
+char	*ft_strdup(const char *s)
 {
-    int i = 0; 
-    int size = ft_strlen(s);
-    char *p = (char *)malloc(size);
-    void *m = memcpy(p,s,size);
-    return p;
-}
-int main ()
-{
-    char * t = "hello!";
-    char * ptr = ft_strdup(t);
-    printf("%s",ptr);
+	int		i;
+	int		size;
+	char	*p;
+	void	*m;
+
+	i = 0;
+	p = NULL;
+	size = ft_strlen(s);
+	m = memcpy(p, s, size);
+	p = (char *)malloc(size);
+	return (p);
 }
