@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:31:13 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/14 12:42:10 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/15 23:46:51 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,8 @@ int	ft_atoi(const char *s)
 	}
 	return (res * signe);
 }
+// int main(int argc, char const *argv[])
+// {
+// 	printf("%d",ft_atoi("--996"));
+// 	return 0;
+// }

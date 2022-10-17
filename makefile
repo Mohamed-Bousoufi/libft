@@ -6,7 +6,7 @@
 #    By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/09 18:24:09 by daelee            #+#    #+#              #
-#    Updated: 2022/10/13 21:56:54 by mbousouf         ###   ########.fr        #
+#    Updated: 2022/10/16 20:39:53 by mbousouf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,9 @@ FILES = ft_memset \
 		ft_isprint \
 		ft_toupper \
 		ft_tolower \
-		ft_calloc 
+		ft_calloc \
+		ft_strlcat \
+		ft_strdup
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

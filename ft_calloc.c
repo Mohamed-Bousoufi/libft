@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:43:30 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/13 20:46:25 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:26:19 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	i;
 
 	i = 0;
-	while (i < count && size)
+	while (i <= count )
 	{
 		p = (char *)malloc(size);
 		i++;
 	}
 	i = 0;
-	while (i < count)
+	while (i < count &&  p != NULL)
 	{
 		p[i] = 0;
 		i++;
 	}
 	return (p);
 }
+

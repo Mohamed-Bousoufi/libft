@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 08:58:38 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/13 22:55:56 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:13:56 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	ft_bzero(void *s, size_t n)
 		}
 
 }
-int main ()
-{
-	char s[] = "";
-	ft_bzero(s,3);
-	printf("%s",s);
-}
+// int main ()
+// {
+// 	char s[] = "";
+// 	ft_bzero(s,3);
+// 	printf("%s",s);
+// }
