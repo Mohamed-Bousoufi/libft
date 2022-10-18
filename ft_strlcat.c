@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:10:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/16 17:06:50 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/17 19:29:03 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,23 @@
 // the string pointed to by dst will not be changed. The function returns min
 // {dstsize,strlen(dst)}+ strlen(src). Buffer overflow can be checked as follows
 
-size_t  ft_strlcat(char *dst , const char *src, size_t dstsize)
-{
-    size_t i;
-    int j;
-    size_t ds;
-    ds = strlen(dst);
-    i =0;
-    j =0;
-    if(dstsize != 0 && src)
-    
-    while(i < dstsize)
-    {
-        dst[ds+i] = src[i];
-                i++;
-    }
-    return (strlen(src)+i);
-}
-// int main ()
-// {
-// //    char *s = "he";
-//     char t[0xF] = "balde";
-//     size_t b = ft_strlcat(t,(void*)0,0);
-//     printf("%zu\t%s",b,t);
+#include "libft.h"
 
-// }
+size_t ft_strlcat(char * dst, const char * src, size_t dstsize)
+{
+size_t s = strlen(src);
+size_t d = strlen(dst);
+if (dstsize == '\0')
+{
+    return (s);
+}
+else if (s < dstsize-1)
+{
+    return (d + s);
+}
+
+else
+{
+    return (d + dstsize);
+}
+}

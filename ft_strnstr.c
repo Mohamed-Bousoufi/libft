@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:20:06 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/16 18:13:48 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:25:17 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // {
 //     char *s = "see FF your FF return FF now FF";
 //     char *d = "FF";
-//     char *x = strnstr(d,s,4);
+//     char *x = ft_strnstr(d,s,4);
 
 //     printf("%s",x);
 // }

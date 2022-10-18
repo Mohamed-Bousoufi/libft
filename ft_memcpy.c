@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:22:04 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/15 21:24:22 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/17 15:53:13 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ void	*ft_memcpy(void *to, const void *from, size_t numBytes)
 // {
 //          char s1[] = "adama traoury";
 //         const char s2[] = "luis";
-//         char * i1 = ft_memcpy(((void *)0), ((void *)0), 3);;
+//         char * i1 = ft_memcpy(s1,s2, 14);;
 //         printf("%s",i1);
 // }
