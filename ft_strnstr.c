@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:20:06 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/18 11:25:17 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:06:55 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			}
 		}
 		i++;
+		len--;
 	}
 	if (little[0] == '\0')
 	{

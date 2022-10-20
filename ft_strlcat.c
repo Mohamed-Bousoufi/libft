@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:10:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/17 19:29:03 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:08:27 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,30 @@
 // {dstsize,strlen(dst)}+ strlen(src). Buffer overflow can be checked as follows
 
 #include "libft.h"
-
-size_t ft_strlcat(char * dst, const char * src, size_t dstsize)
+#include<string.h>
+size_t ft_strlcat(char * dst , const char * src ,size_t dstsize )
 {
-size_t s = strlen(src);
-size_t d = strlen(dst);
-if (dstsize == '\0')
-{
-    return (s);
+    size_t ds;
+    size_t i;
+    if(dstsize <= ft_strlen(dst))
+    {
+        return(dstsize + ft_strlen(src));
+    }
+        i=0;
+     ds = ft_strlen(dst);
+    while( src[i] != '\0' && dstsize >= ds + 1)
+    {
+        dst[ds] = src[i];
+        ds++;
+        i++;
+    }
+    dst[ds] = '\0';
+    return (ds + ft_strlen(&src[i]));
 }
-else if (s < dstsize-1)
+int main ()
 {
-    return (d + s);
-}
-
-else
-{
-    return (d + dstsize);
-}
+    char dst[8] = "hello";
+    char src[] = "again";
+    size_t x = ft_strlcat(dst,src,7);
+    printf("%zu",x);
 }
