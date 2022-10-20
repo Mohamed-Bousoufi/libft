@@ -6,29 +6,27 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:43:30 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/16 18:26:19 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/20 18:34:35 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
+#include<stdlib.h>
+#include<string.h>
+#include<stdio.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void * ft_calloc(size_t count ,size_t size)
 {
-	char	*p = NULL;
-	size_t	i;
+  size_t Max = count * size;
+  size_t i =0;
+    char *p;
+        p = malloc(Max);
+    while(i < Max)
+    {
+        p[i] = '\0';
+        i++;
+    }
+    return (p);
+} 
 
-	i = 0;
-	while (i <= count )
-	{
-		p = (char *)malloc(size);
-		i++;
-	}
-	i = 0;
-	while (i < count &&  p != NULL)
-	{
-		p[i] = 0;
-		i++;
-	}
-	return (p);
-}
 
