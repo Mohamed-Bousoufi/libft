@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:10:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/20 17:08:27 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:26:59 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t ft_strlcat(char * dst , const char * src ,size_t dstsize )
     }
         i=0;
      ds = ft_strlen(dst);
-    while( src[i] != '\0' && dstsize >= ds + 1)
+    while( src[i] != '\0' && dstsize > ds+1)
     {
         dst[ds] = src[i];
         ds++;
@@ -43,11 +43,14 @@ size_t ft_strlcat(char * dst , const char * src ,size_t dstsize )
     }
     dst[ds] = '\0';
     return (ds + ft_strlen(&src[i]));
+    if(!dst && dstsize ==0)
+    {
+        return ft_strlen(src);
+    }
 }
-int main ()
-{
-    char dst[8] = "hello";
-    char src[] = "again";
-    size_t x = ft_strlcat(dst,src,7);
-    printf("%zu",x);
-}
+// int main ()
+// {
+//     char src[] = "again";
+//     size_t x = strlcat(((void *)0),src,0);
+//     printf("%zu",x);
+// }
