@@ -1,23 +1,10 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/03/09 18:24:09 by daelee            #+#    #+#              #
-#    Updated: 2022/10/21 13:10:45 by mbousouf         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =-Wall -Wextra -Werror
 AR = ar -r
 LIBFT_H = ./libft.h
 
-
-FILES = ./ft_memset.c\
+FILES =./ft_memset.c\
 		./ft_bzero.c\
 		./ft_memcpy.c\
 		./ft_memmove.c\
@@ -39,9 +26,8 @@ FILES = ./ft_memset.c\
 		./ft_tolower.c\
 		./ft_calloc.c\
 		./ft_strlcat.c\
-		./ft_strdup.c
-
-
+		./ft_strdup.c\
+		./ft_substr.c
 
 
 
@@ -50,7 +36,7 @@ OBJS =$(FILES:.c=.o)
 
 
 %: $(FILES) $(LIBFT_H)
-	$(CC) $(CFLAGS)
+	$(CC) -c $(CFLAGS) $^
 
 $(NAME): $(OBJS)
 	$(AR)  $@  $^

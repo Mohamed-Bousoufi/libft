@@ -27,4 +27,5 @@ char	*ft_strrchr(const char *s, int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
 size_t ft_strlcat(char *dst , const char *src, size_t dstsize);
+char    *ft_substr(const char *s ,unsigned int start,size_t len);
 #endif
