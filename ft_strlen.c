@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:44:59 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/13 23:59:12 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:18:09 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ size_t	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
-		while (s[i] != '\0')
-		{
-			i++;
-		}
-	
+	while (s[i] != '\0')
+	{
+		i++;
+	}
 	return (i);
 }

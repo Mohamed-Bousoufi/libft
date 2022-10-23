@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:06:18 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/14 01:51:10 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:26:01 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*ptr;
 	size_t	len;
-	int diff =0;
+	int		diff;
 
+	diff = 0;
 	ptr = (char *)s;
 	len = (ft_strlen(s) + 1);
 	while (len > 0)
@@ -25,7 +26,7 @@ char	*ft_strrchr(const char *s, int c)
 		if (*s == (char)c)
 		{
 			ptr = (char *)s;
-			diff =1;
+			diff = 1;
 		}
 		else if (diff == 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:20:06 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/20 17:59:22 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:23:35 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			ptr = (char *)&big[i];
 			diff = 1;
 			while (little[j] != '\0')
-			{
-				if (big[i] != little[j])
-				{
+				if (big[i++] != little[j++])
 					ptr = NULL;
-				}
-				j++;
-				i++;
-			}
 		}
 		i++;
 		len--;
 	}
 	if (little[0] == '\0')
-	{
 		ptr = (char *)&big[0];
-	}
 	return (ptr);
 }
-// int main ()
-// {
-//     char *s = "see FF your FF return FF now FF";
-//     char *d = "FF";
-//     char *x = strnstr(s,d,-50);
-
-//     printf("%s",x);
-// }
