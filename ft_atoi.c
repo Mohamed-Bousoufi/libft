@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:31:13 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/23 20:58:52 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/25 23:02:44 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *s)
 {
 	int		diff;
 	int		signe;
-	long	res;
+	unsigned long	res;
 	int		sz;
 	int		i;
 
@@ -38,6 +38,10 @@ int	ft_atoi(const char *s)
 			diff = 1;
 		sz--;
 	}
+	// if (res > 9223372036854775807 && signe == 1)
+	// 	return (-1);
+	// else if (res > 9223372036854775807 && signe == -1)
+	// 	return (0);
 	return (res * signe);
 }
 // int main(int argc, char const *argv[])
