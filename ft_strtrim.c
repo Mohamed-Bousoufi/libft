@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 17:41:57 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/23 23:30:31 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:54:52 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (ft_substr(s1, i, (j - i) + 1));
 }
+// int main()
+// {
+// 	char *s = "aaabbbbcccccdddd";
+// 	char *res = ft_strtrim(s,"a");
+// 	printf("%s",res);
+// }

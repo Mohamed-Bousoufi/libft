@@ -6,61 +6,90 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:59:09 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/25 23:01:30 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:33:27 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_result(char **p, int nom)
+static	void	free_result(char **p, int nom)
 {
 	int	i;
 
-	i = 0;
-	while (i < nom)
+	i = nom;
+	if (!p)
 	{
-		free(p[i]);
-		i++;
+		p = 0;
 	}
-	free(p);
-}
-
-static	int	numot(char const *s, char c)
-{
-	int	i;
-	int	mot;
-
-	i = 0;
-	mot = 0;
-	while (s[i])
+	else
 	{
-		if (s[i] == c)
-			i++;
-		else
+		while (i >0)
 		{
-			mot++;
-			while (s[i] != c && s[i])
-				i++;
+			free(p[i]);
+			i--;
 		}
+		free(p);
 	}
-	return (mot);
 }
 
-char	**ft_get_next(const char *s, char c)
+// static	int	numot(char const *s, char c)
+// {
+// 	int	i;
+// 	int	mot;
+
+// 	i = 0;
+// 	mot = 0;
+// 	if (!s)
+// 	{
+// 		return (0);
+// 	}
+// 	while (s[i])
+// 	{
+// 		if (s[i] == c)
+// 			i++;
+// 		else
+// 		{
+// 			mot++;
+// 			while (s[i] != c && s[i])
+// 				i++;
+// 		}
+// 	}
+// 	return (mot);
+// }
+static int    numot(char const *s, char c)
+{
+    int    i;
+    int    nb;
+
+    i = 0;
+    nb = 0;
+    while (s[i])
+    {
+        if (s[i] != c)
+        {
+            nb++;
+            while (s[i] != c && s[i])
+                i++;
+        }
+        else
+            i++;
+    }
+    return (nb);
+}
+
+char	**ft_get_next(const char *s, char c, int len)
 {
 	char	**p;
 	int		i;
 	int		j;
 	int		start;
-	int		lenght;
 
 	i = 0;
 	j = 0;
-	lenght = numot(s, c);
-	p = (char **)malloc(lenght * sizeof(char *));
-	if ((!p))
-		free_result(p, numot(s, c));
-	while (lenght > 0)
+	p = malloc(len  * sizeof(char *));
+	if (!p)
+		return (0);
+	while (len-- && s[i])
 	{
 		while (s[i] == c)
 			i++;
@@ -68,9 +97,6 @@ char	**ft_get_next(const char *s, char c)
 		while (s[i] != c && s[i] != '\0')
 			i++;
 		p[j++] = ft_substr(s, start, i - start);
-		if (s[i] == '\0')
-			break ;
-		lenght-- ;
 		start = i;
 		i++;
 	}
@@ -81,20 +107,21 @@ char	**ft_get_next(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**p;
+	int		lenght;
 
 	if (!s)
-	{
 		return (0);
-	}
-	if (c == '\0' && s[0] == '\0')
-	{
-		return (0);
-	}
-	p = ft_get_next(s, c);
+	lenght = numot(s, c);
+	p = ft_get_next(s, c, lenght);
 	if (!p)
 	{
-		free_result(p, numot(s, c));
+		 free_result(p, numot(s, c));
 		return (0);
 	}
 	return (p);
 }
+// int main ()
+// {
+// 	char ** s = ft_split("  tripouille  42  ", ' ');
+// 	printf("%zu",sizeof(s));
+// }

@@ -7,6 +7,7 @@
 size_t  ft_strlen(const char *s);
 int	    ft_isascii(int c);
 int	    ft_atoi(const char *s);
+char	*ft_itoa(int n);
 void    ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int	    ft_isalnum(int c);
@@ -30,4 +31,5 @@ size_t  ft_strlcat(char *dst , const char *src, size_t dstsize);
 char    *ft_substr(const char *s ,unsigned int start,size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 char    **ft_split(char const *s, char c);
+char	*ft_strtrim(char const *s1, char const *set);
 #endif
