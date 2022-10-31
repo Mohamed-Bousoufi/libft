@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:06:18 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/29 21:22:11 by mbousouf         ###   ########.fr       */
+/*   Created: 2022/10/29 21:21:43 by mbousouf          #+#    #+#             */
+/*   Updated: 2022/10/31 11:48:50 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Applique la fonction ’f’ à chaque caractère de la
+// chaîne de caractères transmise comme argument,
+// et en passant son index comme premier argument.
+// Chaque caractère est transmis par adresse à ’f’
+// afin d’être modifié si nécessaire.
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*ptr;
-	size_t	len;
-	int		diff;
+	int	i;
 
-	diff = 0;
-	ptr = (char *)s;
-	len = (ft_strlen(s) + 1);
-	while (len > 0)
+	i = 0;
+	if (s)
 	{
-		if (*s == (char)c)
+		while (s[i])
 		{
-			ptr = (char *)s;
-			diff = 1;
+			(*f)(i, (s + i));
+			i++;
 		}
-		else if (diff == 0)
-		{
-			ptr = NULL;
-		}
-		s++;
-		len--;
 	}
-	return (ptr);
 }

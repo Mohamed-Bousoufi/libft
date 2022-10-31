@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbousouf <mbousouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:06:18 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/29 21:22:11 by mbousouf         ###   ########.fr       */
+/*   Created: 2022/10/31 14:14:20 by mbousouf          #+#    #+#             */
+/*   Updated: 2022/10/31 18:52:06 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*ptr;
 	size_t	len;
-	int		diff;
+	size_t	i;
 
-	diff = 0;
-	ptr = (char *)s;
-	len = (ft_strlen(s) + 1);
-	while (len > 0)
+	i = 0;
+	len = 0;
+	if (s)
 	{
-		if (*s == (char)c)
+		len = ft_strlen(s);
+		while (i < len)
 		{
-			ptr = (char *)s;
-			diff = 1;
+			write(fd, (s + i), 1);
+			i++;
 		}
-		else if (diff == 0)
-		{
-			ptr = NULL;
-		}
-		s++;
-		len--;
 	}
-	return (ptr);
 }

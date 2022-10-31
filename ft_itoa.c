@@ -6,19 +6,18 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:49:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/27 19:43:02 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:45:25 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include"libft.h"
 
 char	*checker(int n, int c)
 {
 	char	*num;
 	int		number;
 
+	if (n && c)
 	number = n;
 	num = malloc(sizeof(char) * c + 2);
 	if (!num)
@@ -64,13 +63,21 @@ char	*ft_itoa(int n)
 	number = n;
 	if (n == 0)
 	{
-		return ((char *)strdup("0"));
+		return ((char *)ft_strdup("0"));
 	}
-	if (n == -2147483648)
+	else if (n == -2147483648)
 	{
-		return ((char *)strdup("-2147483648"));
+		return ((char *)ft_strdup("-2147483648"));
 	}
+	else
 	c = count(n);
 	num = checker(n, c);
+	if (!num)
+		return (0);
 	return (num);
 }
+// int main ()
+// {
+// 	int n = 1;
+// 	printf("%s",ft_itoa(n));
+// }

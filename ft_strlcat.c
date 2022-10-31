@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:10:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/23 23:14:20 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:08:30 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[ds] = '\0';
 	return (ds + ft_strlen(&src[i]));
 }
-// int main ()
-// {
-//     char src[] = "again";
-//     size_t x = strlcat(((void *)0),src,0);
-//     printf("%zu",x);
-// }

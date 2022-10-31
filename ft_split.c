@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:59:09 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/28 22:33:27 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/10/29 15:57:23 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	void	free_result(char **p, int nom)
 	}
 	else
 	{
-		while (i >0)
+		while (i > 0)
 		{
 			free(p[i]);
 			i--;
@@ -32,49 +32,25 @@ static	void	free_result(char **p, int nom)
 	}
 }
 
-// static	int	numot(char const *s, char c)
-// {
-// 	int	i;
-// 	int	mot;
-
-// 	i = 0;
-// 	mot = 0;
-// 	if (!s)
-// 	{
-// 		return (0);
-// 	}
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			i++;
-// 		else
-// 		{
-// 			mot++;
-// 			while (s[i] != c && s[i])
-// 				i++;
-// 		}
-// 	}
-// 	return (mot);
-// }
-static int    numot(char const *s, char c)
+static int	numot(char const *s, char c)
 {
-    int    i;
-    int    nb;
+	int		i;
+	int		nb;
 
-    i = 0;
-    nb = 0;
-    while (s[i])
-    {
-        if (s[i] != c)
-        {
-            nb++;
-            while (s[i] != c && s[i])
-                i++;
-        }
-        else
-            i++;
-    }
-    return (nb);
+	i = 0;
+	nb = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			nb++;
+			while (s[i] != c && s[i])
+				i++;
+		}
+		else
+			i++;
+	}
+	return (nb);
 }
 
 char	**ft_get_next(const char *s, char c, int len)
@@ -86,19 +62,21 @@ char	**ft_get_next(const char *s, char c, int len)
 
 	i = 0;
 	j = 0;
-	p = malloc(len  * sizeof(char *));
+	p = malloc((len + 1) * sizeof(char *));
 	if (!p)
 		return (0);
-	while (len-- && s[i])
+	while (len && s[i])
 	{
 		while (s[i] == c)
 			i++;
 		start = i;
-		while (s[i] != c && s[i] != '\0')
+		while (s[i] != c && s[i])
 			i++;
-		p[j++] = ft_substr(s, start, i - start);
+		p[j] = ft_substr(s, start, (i - start));
 		start = i;
 		i++;
+		j++;
+		len--;
 	}
 	p[j] = 0;
 	return (p);
@@ -115,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	p = ft_get_next(s, c, lenght);
 	if (!p)
 	{
-		 free_result(p, numot(s, c));
+		free_result(p, numot(s, c));
 		return (0);
 	}
 	return (p);
@@ -123,5 +101,5 @@ char	**ft_split(char const *s, char c)
 // int main ()
 // {
 // 	char ** s = ft_split("  tripouille  42  ", ' ');
-// 	printf("%zu",sizeof(s));
+// 	printf("%zu >>>> %zu",ft_strlen(s[1]),ft_strlen("42"));
 // }
