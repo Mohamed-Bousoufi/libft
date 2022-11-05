@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 21:21:43 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/31 11:48:50 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/05 18:45:58 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int	i;
 
 	i = 0;
-	if (s)
+	if (!s || !f)
+		return ;
+	while (s[i])
 	{
-		while (s[i])
-		{
-			(*f)(i, (s + i));
-			i++;
-		}
+		(*f)(i, (s + i));
+		i++;
 	}
 }

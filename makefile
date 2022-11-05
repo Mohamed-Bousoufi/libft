@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS =-Wall -Wextra -Werror
 AR = ar -r
 LIBFT_H = ./libft.h
-
+BONUS = bonus.a
 FILES =./ft_memset.c\
 		./ft_bzero.c\
 		./ft_memcpy.c\
@@ -39,28 +39,49 @@ FILES =./ft_memset.c\
 		./ft_putendl_fd.c\
 		./ft_putnbr_fd.c
 
-
+BOUNUS_FILES = ./ft_lstnew.c\
+				./ft_lstadd_front.c\
+				./ft_lstsize.c\
+				./ft_lstlast.c\
+				./ft_lstadd_back.c\
+				./ft_lstdelone.c\
+				./ft_lstclear.c\
+				./ft_lstiter.c\
+				./ft_lstmap.c
+				
 
 OBJS =$(FILES:.c=.o)
 
 
+OBJS_BOUNUS = $(BOUNUS_FILES:.c=.o)
 
-%: $(FILES) $(LIBFT_H)
+
+
+
+
+$(OBJS): $(FILES) $(LIBFT_H)
 	$(CC) -c $(CFLAGS) $^
 
-$(NAME): $(OBJS)
-	$(AR)  $@  $^
+$(OBJS_BOUNUS) : $(BOUNUS_FILES) $(LIBFT_H)
+	$(CC) -c $(CFLAGS) $^
 
 
 
-all: $(NAME)
+$(NAME): $(OBJS) 
+	$(AR)  $(NAME) $^
+
+
+$(BONUS) : $(OBJS_BOUNUS)
+	$(AR)  $(NAME) $^
+
+all: $(NAME) $(BONUS)
 
 clean:
 	$(RM) $(OBJS) 
 
 fclean: clean
-	$(RM) $(NAME)
-
+	$(RM) $(NAME) $(BONUS) $(OBJS_BOUNUS)
+bonus : $(BONUS)
 re: clean all
 
 .PHONY: bonus all clean fclean re
