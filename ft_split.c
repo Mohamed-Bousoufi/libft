@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:59:09 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/29 15:57:23 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:41:59 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	numot(char const *s, char c)
 	return (nb);
 }
 
-char	**ft_get_next(const char *s, char c, int len)
+static char	**ft_get_next(const char *s, char c, int len)
 {
 	char	**p;
 	int		i;
@@ -98,8 +98,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (p);
 }
-// int main ()
-// {
-// 	char ** s = ft_split("  tripouille  42  ", ' ');
-// 	printf("%zu >>>> %zu",ft_strlen(s[1]),ft_strlen("42"));
-// }

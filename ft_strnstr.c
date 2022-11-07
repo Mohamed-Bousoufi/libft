@@ -6,47 +6,48 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:20:06 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/05 19:18:18 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:00:05 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-char	*check(const char *big, const char *little, size_t len)
+static char	*check(const char *haystack, const char *needle, size_t len)
 {
 	char	*ptr;
 
 	ptr = 0;
-	if ((!big || !little) && (len == 0))
-		ptr = "\0";
-	if (little[0] == '\0')
-		ptr = ((char *)big);
-	if (big == 0)
+	if ((!haystack || !needle) && (len == 0))
+		ptr = NULL;
+	if (needle[0] == '\0')
+		ptr = ((char *)haystack);
+	if (haystack == 0)
 	{
-		ptr = "\0";
+		ptr = NULL;
 	}
 	return (ptr);
 }
 
-char	*strn(const char *big, const char *little, size_t len, int diff)
+static char	*strn(const char *haystack, const char *needle,
+	size_t len, int diff)
 {
 	char	*ptr;
 	size_t	i;
 	size_t	j;
 
 	i = -1;
-	ptr = check(big, little, len);
-	while (++i <= (len - 1) && big[i])
+	ptr = check(haystack, needle, len);
+	while (++i <= (len - 1) && haystack[i])
 	{
-		if ((big[i] == little[0]) && diff == 0)
+		if ((haystack[i] == needle[0]) && diff == 0)
 		{
-			ptr = (char *)&big[i];
+			ptr = (char *)&haystack[i];
 			diff = 1;
 			j = -1;
-			while (little[++j] != '\0')
+			while (needle[++j] != '\0')
 			{
-				if (big[i + j] != little[j] || i + j > len - 1 || len == 0)
+				if (haystack[i + j] != needle[j] || i + j > len - 1 || len == 0)
 				{
 					ptr = NULL;
 					diff = 0;
@@ -58,25 +59,24 @@ char	*strn(const char *big, const char *little, size_t len, int diff)
 	return (ptr);
 }
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*ptr;
 	int		diff;
 
 	diff = 0;
-	if (len == 0 && little[0] != 0)
+	if (len == 0 && needle[0] != 0)
 		return (0);
-	ptr = strn(big, little, len, diff);
+	ptr = strn(haystack, needle, len, diff);
 	if (ptr != 0)
 		return (ptr);
-	if (little[0] == '\0')
-	ptr = (char *)&big[0];
+	if (needle[0] == '\0')
+	ptr = (char *)&haystack[0];
+	if (len < ft_strlen(needle))
+		return (NULL);
 	return (ptr);
 }
-// int main
+// int main ()
 // {
-// 	char * l = "abcdef";
-// 	char * b = "abc";
-// 	char *s =ft_strnstr(b,l,2);
-// 	printf("%s",s);
+//     printf("%s",ft_strnstr("abc", "abcdef", 2));
 // }
