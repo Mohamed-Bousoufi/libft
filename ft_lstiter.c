@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 12:01:40 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/05 20:28:55 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:33:16 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst && !f)
+	if (!lst || !f)
 	{
 		return ;
 	}

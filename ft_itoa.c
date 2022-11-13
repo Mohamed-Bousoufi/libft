@@ -6,13 +6,13 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:49:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/06 18:31:53 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:34:46 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*filput(char *num, int c, int number)
+static char	*filput(char *num, int c, int number)
 {
 	int	n;
 	int	m;
@@ -24,7 +24,7 @@ char	*filput(char *num, int c, int number)
 		num[0] = '-';
 		number *= -1;
 	}
-	c--;
+		c--;
 	while (number != 0)
 	{
 		n = (char)(number % 10 + 48);
@@ -34,26 +34,23 @@ char	*filput(char *num, int c, int number)
 	}
 	num[m] = '\0';
 	return (num);
-	return (num);
 }
 
-char	*checker(int n, int c)
+static char	*checker(int n, int c)
 {
 	char		*num;
-	int			number;
 
 	if (n && c)
 		if (n < 0)
 			c++;
-	number = n;
 	num = (char *)malloc(sizeof(char) * c + 1);
 	if (!num)
 		return (0);
-	num = filput(num, c, number);
+	num = filput(num, c, n);
 	return (num);
 }
 
-int	count(int n)
+static int	count(int n)
 {
 	int	c;
 
@@ -92,9 +89,3 @@ char	*ft_itoa(int n)
 		return (0);
 	return (num);
 }
-// int main ()
-// {
-// 	int n = -103;
-// 	printf("%s",ft_itoa(n));
-
-// }

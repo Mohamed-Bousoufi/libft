@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:29:42 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/07 11:36:11 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:43:23 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putendl_fd(char *s, int fd)
 
 	i = 0;
 	len = 0;
-	if (s && fd)
+	if (s)
 	{
 		ft_putstr_fd(s, fd);
 		write(fd, "\n", 1);

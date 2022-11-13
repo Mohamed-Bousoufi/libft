@@ -55,18 +55,18 @@ OBJS_BOUNUS = $(BOUNUS_FILES:.c=.o)
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	$(AR) $(NAME) $^
 
 %.o :%.c $(LIBFT_H)
-	$(CC) $(FLAGS) -c $<
+	$(CC) $(CFLAGS) -c $<
 
 bonus :  $(OBJS_BOUNUS)
-		$(AR)  $(NAME) $(OBJS_BOUNUS) 
+		@$(AR)  $(NAME) $^
 
 clean:
 	rm -f $(OBJS) $(OBJS_BOUNUS)
 
 fclean: clean
-	rm -f $(NAME) 
+	rm -f $(NAME)
 	
-re: clean all
+re: fclean all

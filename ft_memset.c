@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:26:35 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/07 13:14:53 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:43:48 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (s);
 }
-// int main()
-// {
-// 	int *i;
-// 	//1337
-// 	ft_memset(i,57,1);
-// 	ft_memset((unsigned char*)i+1,5,1);
-// 	printf("%d",*i);
-// 	return 0;
-// }

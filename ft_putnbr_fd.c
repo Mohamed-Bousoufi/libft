@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:07:44 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/07 11:46:29 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:09:08 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 		num = num / 10;
 	}
 }
-// int main ()
-// {
-// 	int fd;
-// 	fd = open("/Users/mbousouf/Desktop/libft/file.txt",O_RDWR | O_CREAT,0645);
-// 	ft_putnbr_fd(-2147483648LL,fd);
-// }

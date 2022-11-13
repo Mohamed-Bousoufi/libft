@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:54:40 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/07 13:37:07 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:34:47 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		*lst = new;
-		lst = NULL;
 	}
 }

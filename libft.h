@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 12:33:06 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/07 12:57:19 by mbousouf         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:58:27 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
