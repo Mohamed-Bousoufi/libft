@@ -6,11 +6,11 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:11:11 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/10/23 22:02:35 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/08/26 16:40:08 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 
 int	ft_isalnum(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 23:32:29 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/06 22:30:33 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/08/26 16:41:51 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*p;
 
 	i = 0;
-	if (s == '\0' && len >= 0)
+	if (s == (void *) '\0' && len >= 0)
 		return (0);
 	if (start >= (unsigned int)ft_strlen(s))
 	{

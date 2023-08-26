@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:49:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/12 17:34:46 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/08/26 16:42:45 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	*filput(char *num, int c, int number)
 		num[0] = '-';
 		number *= -1;
 	}
-		c--;
+	c--;
 	while (number != 0)
 	{
 		n = (char)(number % 10 + 48);

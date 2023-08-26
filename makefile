@@ -58,10 +58,10 @@ $(NAME) : $(OBJS)
 	$(AR) $(NAME) $^
 
 %.o :%.c $(LIBFT_H)
-	$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $< -fPIC
 
 bonus :  $(OBJS_BOUNUS)
-		@$(AR)  $(NAME) $^
+	gcc -shared $(OBJS) $(OBJS_BOUNUS) -o libft.so
 
 clean:
 	rm -f $(OBJS) $(OBJS_BOUNUS)

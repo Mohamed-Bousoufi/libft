@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 23:25:59 by mbousouf          #+#    #+#             */
-/*   Updated: 2022/11/10 17:51:26 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/08/26 16:42:16 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		while (s2len)
 		{
 			ptr[s1len++] = s2[j++];
-				s2len--;
+			s2len--;
 		}
 		ptr[s1len] = '\0';
 		return (ptr);
